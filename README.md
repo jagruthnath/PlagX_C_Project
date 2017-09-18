@@ -1,5 +1,5 @@
 # PlagX_C_Project
 
-1.Bag of Words
-2.LCS
-3.Fingerprinting
+1.Bag of Words<br>
+2.LCS<br>
+3.Fingerprinting<br>
