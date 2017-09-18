@@ -9,7 +9,7 @@
 char w1[50][50],w2[50][50],t1[50][50],t2[50][50];
 int list1[50],list2[50],lens=0;
 int n=0,kg=5;
-char directory[100];//="C:\\Testfiles\\"
+char directory[100];//="C:\\Testfiles\\";
 int f_count()
 {
     int nof=0;
