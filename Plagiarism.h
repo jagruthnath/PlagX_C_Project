@@ -20,7 +20,7 @@ int f_count()
             nof++;
     return nof;
 }
-void file_read(char f_c[f_count()][100],char fname[f_count()+1][20])
+void file_read(char fwp[f_count()][100],char fname[f_count()+1][20])
 {
     int nof=0,i=0;
     DIR *dir;
@@ -34,8 +34,8 @@ void file_read(char f_c[f_count()][100],char fname[f_count()+1][20])
             strcat(file,ent->d_name);
             if(nof>2) {
                 strcpy (fname[i], ent->d_name);
-                strcpy(f_c[i],directory);
-                strcat(f_c[i],fname[i]);
+                strcpy(fwp[i],directory);
+                strcat(fwp[i],fname[i]);
                 i++;
             }
         }

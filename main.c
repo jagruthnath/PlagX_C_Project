@@ -7,13 +7,13 @@ int main(int argc, char *argv[])
     //Copying cmdline argument to a char array for further use.
     strcpy(directory,argv[1]);
     int nof=f_count();//Counting no.of files
-    char f_c[nof][100];//Path to each file
+    char fwp[nof][100];//Path to each file
     char fname[nof][20];
     char content1[1000],content2[1000],last1[50],last2[50];//Fingerprinting variables
     int size_a,size_b,lens1,lens2;
     for (int i = 0; i < nof ; ++i)
-        strcpy(f_c[i],"");
-    file_read(f_c,fname);//All the file names and path to each file is generated.
+        strcpy(fwp[i],"");
+    file_read(fwp,fname);//All the file names and path to each file is generated.
     for (int i = 0; i < nof ; ++i)
         fname[i][strlen(fname[i])]='\0';
     float plagx[nof][nof],plagx_lcs[nof][nof],plagx_finger[nof][nof];
@@ -27,13 +27,13 @@ int main(int argc, char *argv[])
 
                 // printf("%s\t:\t",fname[a]);
                 int flag=1;
-                process(f_c[a],t1,w1,flag);         //collecting words and their count in w1 and list1
+                process(fwp[a],t1,w1,flag);         //collecting words and their count in w1 and list1
                 size_a=n;
                 lens1=lens;
                 flag=0;
 
                 // printf("\n%s\t:\t",fname[b]);
-                process(f_c[b],t2,w2,flag);         //collecting words and their count in w2 and list2
+                process(fwp[b],t2,w2,flag);         //collecting words and their count in w2 and list2
                 size_b=n;
                 lens2=lens;
                 //printf("\n");
@@ -63,10 +63,10 @@ int main(int argc, char *argv[])
                 //LCS end
 
                 //Fingerprinting start
-                process_finger(f_c[a],content1,last1);
+                process_finger(fwp[a],content1,last1);
                 strrev(last1);
                 int len_a=lens;
-                process_finger(f_c[b],content2,last2);
+                process_finger(fwp[b],content2,last2);
                 strrev(last2);
                 int len_b=lens;
                 int small=len_a>len_b?len_b:len_a;
